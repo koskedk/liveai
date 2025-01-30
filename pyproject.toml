@@ -3,7 +3,7 @@ line-length = 119
 extend-exclude = ["ui"]
 
 [tool.ruff.lint]
-ignore = ["D205", "C901", "D100", "D101", "D102", "D104", "D103", "I001"]
+ignore = ["D205", "C901", "D100", "D101", "D102", "D104", "D103","D107", "I001"]
 select = ["C", "E", "F", "I", "W", "D"]
 
 [tool.ruff.lint.per-file-ignores]

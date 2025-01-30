@@ -1,12 +1,16 @@
-from loguru import logger
 import logging
 
-logging.basicConfig(level=logging.DEBUG)
+from loguru import logger
 
-logging.info("staring,,,")
-logging.debug("XX staring,,,")
+from aide.jab import OllamaJab
+from core.config import initialize_app_testing
 
 
-def test_prompt():
-    logging.debug(">>>>>>|||")
-    assert True
+ol = OllamaJab()
+
+
+def test_get_response():
+    ol.ask("does it snow in Nairobi?")
+    res = ol.get_response()
+    assert res is not None
+    logger.info(res)

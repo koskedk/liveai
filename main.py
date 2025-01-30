@@ -1,19 +1,29 @@
-import argparse
-import sys
-
 from loguru import logger
 
-logger.add("logs/error_{time:YYYY-MM-DD}.log", level="ERROR", rotation="5MB")
-logger.remove()
-logger.add(sys.stdout, level="INFO")
+from aide.jab import Jab
+from core.config import initialize_app
+
+
+initialize_app()
 
 
 def main():
-    parser = argparse.ArgumentParser(description="ask live.AI anything today")
-    parser.add_argument("--q", type=str, help="your question")
-    args = parser.parse_args()
-    print("hello from live.AI!")
-    print(f">>> {args.q} <<<")
+    logger.info("++++++++")
+    logger.info(" live./\\\\I")
+    logger.info("++++++++")
+    j = Jab()
+    print()
+    print()
+    while True:
+        inp = input("ask live.AI anything today ?")
+        if inp.lower() == "q":
+            logger.info("Bye Bye !")
+            break
+        print()
+        print()
+        logger.info("---------------------------")
+        logger.info(f" {j.get_response(inp)} <<<")
+        logger.info("---------------------------")
 
 
 if __name__ == "__main__":

@@ -1,0 +1,24 @@
+[tool.ruff]
+line-length = 119
+extend-exclude = ["ui"]
+
+[tool.ruff.lint]
+ignore = ["D205", "C901", "D100", "D104", "D103", "I001"]
+select = ["C", "E", "F", "I", "W", "D"]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/*" = ["D", "C408", "C901", "F401"]
+"docs/*" = ["D", "F401"]
+
+[tool.ruff.lint.isort]
+lines-after-imports = 2
+known-first-party = ["pixano"]
+
+[tool.ruff.lint.pydocstyle]
+convention = "google"
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+skip-magic-trailing-comma = false
+line-ending = "auto"

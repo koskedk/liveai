@@ -13,6 +13,7 @@ class Jab(ABC):
 
 class OllamaJab(Jab):
     def __init__(self):
+        self.client = None
         self.api = os.getenv("CHAT")
         self.model = os.getenv("MODEL")
         self.question = None
